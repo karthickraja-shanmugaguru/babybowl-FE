@@ -30,6 +30,9 @@ const QuickView = (props) => {
     showNotification();
   };
 
+  // Rating: ${'⭐'?.repeat(Math?.floor(productDetails?.rating))} (${productDetails?.rating})
+  // Tags: ${productDetails?.tags?.join(', ')}
+
   const createWhatsAppMessage_and_Checkout = (productDetails) => {
     const phoneNumber = '919360226758';
     const message = `🛍️ *New Order from Baby Bowl*
@@ -44,9 +47,6 @@ const QuickView = (props) => {
     ${productDetails?.description}
 
     Category: ${productDetails?.categories?.join(', ')}
-    Tags: ${productDetails?.tags?.join(', ')}
-
-    Rating: ${'⭐'?.repeat(Math?.floor(productDetails?.rating))} (${productDetails?.rating})
 
     Please confirm my order details and provide payment information.
 

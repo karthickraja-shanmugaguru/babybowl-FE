@@ -74,6 +74,9 @@
 .mobileNavContainer {
     display: flex;
     flex-direction: column;
+    max-height: 80vh; /* Adjust height to fit within viewport */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 8px; /* Add some padding to the right for better appearance */
 }
 
 .mobileLink {

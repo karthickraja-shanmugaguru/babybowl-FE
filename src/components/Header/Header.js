@@ -117,9 +117,14 @@ const Header = (prop) => {
           >
             <Icon symbol={`${mobileMenu === true ? 'cross' : 'burger'}`}></Icon>
           </div>
+
+          {/***Logo in header */}
           <Brand />
+          {/***Logo in header */}
+
+          {/***Search Icon */}
           <div className={styles.actionContainers}>
-            <button
+            {/* <button
               aria-label="Search"
               className={`${styles.iconButton} ${styles.iconContainer}`}
               onClick={() => {
@@ -127,7 +132,8 @@ const Header = (prop) => {
               }}
             >
               <Icon symbol={'search'}></Icon>
-            </button>
+            </button> */}
+            {/***Search Icon */}
             {/* <Link
               aria-label="Favorites"
               href="/account/favorites"
@@ -162,7 +168,7 @@ const Header = (prop) => {
         </div>
 
         {/* search container */}
-        <div
+        {/* <div
           className={`${styles.searchContainer} ${
             showSearch === true ? styles.show : styles.hide
           }`}
@@ -202,7 +208,8 @@ const Header = (prop) => {
             }}
             className={styles.backdrop}
           ></div>
-        </div>
+        </div> */}
+        {/* search container */}
       </Container>
 
       {/* menu container inside Product header*/}

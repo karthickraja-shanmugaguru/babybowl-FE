@@ -37,7 +37,7 @@ const ProductCard = (props) => {
     <div className={styles.root}>
       <div
         className={styles.imageContainer}
-        onClick={() => handleRouteToProduct()}
+        // onClick={() => handleRouteToProduct()}
         role={'presentation'}
       >
         <img

@@ -239,6 +239,9 @@
         display: grid;
         grid-template-columns: 0.55fr 0.45fr;
         gap: 16px;
+        justify-content: center; /* Center the content horizontally */
+        align-items: center; /* Center the content vertically */
+        margin-left: 15px;
     }
 
     .socialIconContainer {

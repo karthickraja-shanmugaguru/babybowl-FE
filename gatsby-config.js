@@ -1,7 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Sydney Ecommerce Theme`,
-    siteUrl: `https://jamm.matter.design`,
+    title: `Babybowl`,
+    siteUrl: `https://www.babybowl.life/`,
   },
-  plugins: [],
+  plugins: [
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: `Babybowl`,
+        short_name: `Babybowl`,
+        theme_color: `#000000`,
+        display: `standalone`,
+        icon: "src/assets/favicon.png"
+      },
+      // .
+    }
+  ],
 };

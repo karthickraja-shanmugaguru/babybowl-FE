@@ -43,6 +43,7 @@ const IndexPage = () => {
   console.log('productData >><<', productData);
   return (
     <Layout disablePaddingBottom>
+      {/***Landing Page */}
       {/* Hero Container */}
       <Hero
         maxWidth={'500px'}
@@ -78,8 +79,8 @@ const IndexPage = () => {
             spacing={true}
             showSlider
             height={480}
-            columns={productData?.length}
-            data={productData}
+            columns={4}
+            data={productData?.slice(0, 4)}
           />
         </Container>
       </div>
@@ -155,6 +156,7 @@ const IndexPage = () => {
         </div>
       </div> */}
       <AttributeGrid />
+      {/***Landing Page */}
     </Layout>
   );
 };

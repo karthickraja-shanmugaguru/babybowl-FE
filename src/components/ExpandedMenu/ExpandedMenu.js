@@ -24,13 +24,17 @@ const ExpandedMenu = (props) => {
   if (menu === null || menu === undefined) return <React.Fragment />;
   return (
     <div className={styles.root}>
-      <div>
+      <div className={styles.linkContainers}>
         {categoryLists?.map((item, index) => {
           return (
             <div key={index} className={styles?.categoryContainer}>
               {/* <span className={styles.categoryName}>{item?.name}</span> */}
-              <span>
-                <Link to="/shop/" state={{ category: item?.name }}>
+              <span className={styles.categoryName}>
+                <Link
+                  to="/shop/"
+                  state={{ category: item?.name }}
+                  className={styles.menuLink}
+                >
                   {item?.name}
                 </Link>
               </span>
