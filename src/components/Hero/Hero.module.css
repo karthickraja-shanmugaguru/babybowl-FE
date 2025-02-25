@@ -82,3 +82,95 @@
         padding: 0px 32px;
     }
 }
+/* Custom responsive styling for carousel banner*/
+.carouselContainer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    /* background-color: #FFF5F6; */
+  }
+  
+  .slideWrapper {
+    width: 100%;
+    height: 450px; /* Default height for desktop */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bannerImage {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Large tablets and small desktops */
+@media (max-width: 1200px) {
+    .slideWrapper {
+      height: 400px;
+    }
+    
+    .bannerImage {
+      object-fit: contain;
+    }
+  }
+  
+  /* iPads and tablets */
+  @media (max-width: 1024px) {
+    .slideWrapper {
+      height: 350px;
+    }
+  }
+
+  /* Small tablets and large mobile */
+@media (max-width: 768px) {
+    .slideWrapper {
+      height: 300px;
+    }
+    
+    .bannerImage {
+      object-fit: contain;
+    }
+  }
+  
+  /* Mobile devices */
+  @media (max-width: 480px) {
+    .slideWrapper {
+      height: 200px;
+    }
+  }
+
+  /* Small mobile devices */
+@media (max-width: 375px) {
+    .slideWrapper {
+      height: 180px;
+    }
+  }
+  
+  /* Portrait iPads */
+  @media only screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1024px) 
+    and (orientation: portrait) {
+    .slideWrapper {
+      height: 320px;
+    }
+    
+    .bannerImage {
+      object-fit: contain;
+    }
+  }
+
+  /* Landscape iPads */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: landscape) {
+.slideWrapper {
+  height: 380px;
+}
+}
+/* Custom responsive styling for carousel banner*/

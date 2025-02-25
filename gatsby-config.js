@@ -11,9 +11,9 @@ module.exports = {
         short_name: `Babybowl`,
         theme_color: `#000000`,
         display: `standalone`,
-        icon: "src/assets/favicon.png"
+        icon: 'src/assets/baby_logo.png',
       },
       // .
-    }
+    },
   ],
 };

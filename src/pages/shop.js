@@ -15,12 +15,14 @@ import Button from '../components/Button';
 import Config from '../config.json';
 import { useLocation } from 'react-router-dom';
 import { getProductLists } from '../apiCalls';
+import { Spin } from 'antd';
 
 const ShopPage = (props) => {
   const [showFilter, setShowFilter] = useState(false);
   const data = generateMockProductData(6, 'woman');
   const locationData = props?.location;
   const [productLists, setProductLists] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     window.addEventListener('keydown', escapeHandler);
@@ -33,23 +35,32 @@ const ShopPage = (props) => {
   };
 
   useEffect(() => {
+    setLoading(true);
     getProductLists(
       locationData?.state?.category || '',
       (response) => {
         setProductLists(response?.data?.data);
+        setLoading(false);
       },
       (error) => {
         console.log('productList error', error);
+        setLoading(false);
       },
     );
   }, [locationData?.state?.category]);
 
   console.log('locationData in Shop page >><<', locationData?.state?.category);
   return (
-    <Layout>
-      <div className={styles.root}>
-        {/***BreadCrumbs */}
-        {/* <Container size={'large'} spacing={'min'}>
+    <>
+      {loading ? (
+        <div className={styles.loaderContainer}>
+          <Spin />
+        </div>
+      ) : (
+        <Layout>
+          <div className={styles.root}>
+            {/***BreadCrumbs */}
+            {/* <Container size={'large'} spacing={'min'}>
           <div className={styles.breadcrumbContainer}>
             <Breadcrumbs
               crumbs={[
@@ -60,21 +71,21 @@ const ShopPage = (props) => {
             />
           </div>
         </Container> */}
-        {/***BreadCrumbs */}
-        {/* <Banner
+            {/***BreadCrumbs */}
+            {/* <Banner
           maxWidth={'650px'}
           name={`Woman's Sweaters`}
           subtitle={
             'Look to our women’s sweaters for modern takes on one-and-done dressing. From midis in bold prints to dramatic floor-sweeping styles and easy all-in-ones, our edit covers every mood.'
           }
         /> */}
-        <Container size={'large'} spacing={'min'}>
-          <div className={styles.metaContainer}>
-            <span className={styles.itemCount}>
-              {productLists?.length +
-                `${productLists?.length > 1 ? ` items` : ` item`}`}
-            </span>
-            {/* <div className={styles.controllerContainer}>
+            <Container size={'large'} spacing={'min'}>
+              <div className={styles.metaContainer}>
+                <span className={styles.itemCount}>
+                  {productLists?.length +
+                    `${productLists?.length > 1 ? ` items` : ` item`}`}
+                </span>
+                {/* <div className={styles.controllerContainer}>
               <div
                 className={styles.iconContainer}
                 role={'presentation'}
@@ -90,8 +101,8 @@ const ShopPage = (props) => {
                 <Icon symbol={'caret'} />
               </div>
             </div> */}
-          </div>
-          {/* <CardController
+              </div>
+              {/* <CardController
             closeFilter={() => setShowFilter(false)}
             visible={showFilter}
             filters={Config.filters}
@@ -100,30 +111,32 @@ const ShopPage = (props) => {
             <Chip name={'XS'} />
             <Chip name={'S'} />
           </div> */}
-          <div className={styles.productContainer}>
-            <span className={styles.mobileItemCount}>
-              <br />
-              <br />
-              {productLists?.length +
-                `${productLists?.length > 1 ? ` items` : ` item`}`}
-            </span>
-            {/**Products list section */}
-            <ProductCardGrid data={productLists}></ProductCardGrid>
-            {/**Products list section */}
-          </div>
-          {/***Load More Section */}
-          {/* <div className={styles.loadMoreContainer}>
+              <div className={styles.productContainer}>
+                <span className={styles.mobileItemCount}>
+                  <br />
+                  <br />
+                  {productLists?.length +
+                    `${productLists?.length > 1 ? ` items` : ` item`}`}
+                </span>
+                {/**Products list section */}
+                <ProductCardGrid data={productLists}></ProductCardGrid>
+                {/**Products list section */}
+              </div>
+              {/***Load More Section */}
+              {/* <div className={styles.loadMoreContainer}>
             <span>6 of 456</span>
             <Button fullWidth level={'secondary'}>
               LOAD MORE
             </Button>
           </div> */}
-          {/***Load More Section */}
-        </Container>
-      </div>
+              {/***Load More Section */}
+            </Container>
+          </div>
 
-      {/* <LayoutOption /> */}
-    </Layout>
+          {/* <LayoutOption /> */}
+        </Layout>
+      )}
+    </>
   );
 };
 

@@ -121,3 +121,17 @@
         display: none;
     }
 }
+
+.loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make sure the container takes up the full screen height */
+    width: 100vw; /* Make sure the container takes up the full screen width */
+    position: relative; /* To cover the entire screen */
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8); /* Optional: Add a semi-transparent background */
+    /* z-index: 1000; Ensure it's on top of other content */
+  }
+  

@@ -39,6 +39,7 @@ const ProductCard = (props) => {
         className={styles.imageContainer}
         // onClick={() => handleRouteToProduct()}
         role={'presentation'}
+        onClick={(e) => handleQuickView(e)}
       >
         <img
           style={{ height: `${height}px` }}
@@ -48,7 +49,7 @@ const ProductCard = (props) => {
         <div
           className={styles.bagContainer}
           role={'presentation'}
-          onClick={(e) => handleQuickView(e)}
+          // onClick={(e) => handleQuickView(e)}
         >
           <Icon symbol={'bagPlus'} />
         </div>

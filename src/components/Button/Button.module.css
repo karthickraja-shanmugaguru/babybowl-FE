@@ -18,7 +18,7 @@
 .primary {
     border: 2px solid var(--standard-black);
     color: var(--standard-white);
-    background-color: var(--standard-black);;
+    background-color: green;;
     text-transform: uppercase;
     font-weight: 500;
     

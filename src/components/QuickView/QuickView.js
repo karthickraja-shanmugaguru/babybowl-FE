@@ -61,7 +61,6 @@ const QuickView = (props) => {
     // Open WhatsApp in a new tab
     window.open(whatsappUrl, '_blank');
     close();
-    showNotification();
   };
 
   useEffect(() => {
