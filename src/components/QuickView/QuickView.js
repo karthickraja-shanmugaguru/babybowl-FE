@@ -34,7 +34,7 @@ const QuickView = (props) => {
   // Tags: ${productDetails?.tags?.join(', ')}
 
   const createWhatsAppMessage_and_Checkout = (productDetails) => {
-    const phoneNumber = '919360226758';
+    const phoneNumber = '919445315451';
     const message = `🛍️ *New Order from Baby Bowl*
 
     *Product Details*
