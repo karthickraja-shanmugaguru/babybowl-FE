@@ -41,7 +41,7 @@ const QuickView = (props) => {
     Name: ${productDetails?.name}
     Brand: ${productDetails?.brand}
     ${productDetails?.ProductInfo?.measurementsName}: ${activeSize?.toUpperCase()}
-    Price: ${'₹' + productDetails?.price}
+    Price: ${'₹' + productDetails?.price} / This is the best available price.
 
     *Product Description*
     ${productDetails?.description}
